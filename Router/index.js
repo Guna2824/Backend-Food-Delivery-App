@@ -70,7 +70,7 @@ router.post("/orderfood", async (req, res) => {
 
   const foodAmount = unitPrice * count;
   const zoneAmount = (baseKmPrice + kmPrice) * typePrice;
-  const total = foodAmount + zoneAmount;
+  const total = Math.round(foodAmount + zoneAmount);
 
   const response = await [
     {
