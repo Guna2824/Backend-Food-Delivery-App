@@ -25,7 +25,7 @@ router.put("/additem", async (req, res) => {
         unit: unit,
         unitPrice: unitPrice,
       });
-      res.status(201).send("FoodItem Add DB " + response);
+      res.status(201).send("FoodItem Add DB ");
     } catch (err) {
       res.status(400).send(err.message);
       console.error(err);
@@ -70,7 +70,7 @@ router.post("/orderfood", async (req, res) => {
 
   const foodAmount = unitPrice * count;
   const zoneAmount = (baseKmPrice + kmPrice) * typePrice;
-  const total = foodAmount + zoneAmount;
+  const total = Math.round(foodAmount + zoneAmount);
 
   const response = await [
     {
