@@ -62,7 +62,7 @@ router.post("/orderfood", async (req, res) => {
     console.error(err);
   }
 
-  if (type === "persihable") {
+  if (type === "perishable") {
     typePrice = 1.5;
   } else {
     typePrice = 1;
